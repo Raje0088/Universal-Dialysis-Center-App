@@ -12,7 +12,7 @@ import Doctors from "./components/Doctors";
 import Pricing from "./components/Pricing";
 import QNA from "./components/QNA";
 import Contact from "./components/Contact";
-import I2s2Footer from "./components/i2s2Footer";
+import I2s2Footer from "./components/I2s2Footer";
 import Gallery from "./components/Gallery";
 import Map from "./components/Map";
 import WhatsApp from "./components/WhatsApp";
