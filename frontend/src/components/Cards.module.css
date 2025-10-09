@@ -1,0 +1,47 @@
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tilt-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.tilt-content {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  backface-visibility: hidden;
+}
+
+/* This will be applied via JavaScript based on cursor position */
+.tilt-effect {
+  transform: perspective(1000px) rotateX(var(--rotateX)) rotateY(var(--rotateY)) scale(1.02);
+}
+
+/* For the pressed effect on hover */
+.tilt-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at var(--x) var(--y),
+    /* rgba(255, 255, 255, 0.2) 0%, */
+    /* rgba(255, 255, 255, 0) 50% */
+    rgba(255, 255, 255, 0.5) 5%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.tilt-card:hover::after {
+  opacity: 1;
+}

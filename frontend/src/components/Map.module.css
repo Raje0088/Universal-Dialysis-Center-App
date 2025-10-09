@@ -1,0 +1,381 @@
+/* Map Container */
+.mapContainer {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.mapContainer {
+  width: 100%;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Map Header */
+.mapHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.mapHeader h2 {
+   /* color: #008080; */
+  /* font-size: 2.25rem; */
+  /* font-weight: 700; */
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 15px; 
+}
+
+.mapControls {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.locationBtn,
+.resetBtn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+}
+
+.locationBtn {
+  background: linear-gradient(135deg, #008080, #20b2aa);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 128, 128, 0.3);
+}
+
+.locationBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 128, 128, 0.4);
+}
+
+.locationBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.resetBtn {
+  background: linear-gradient(135deg, #6c757d, #495057);
+  color: white;
+  box-shadow: 0 4px 15px rgba(108, 117, 125, 0.3);
+}
+
+.resetBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(108, 117, 125, 0.4);
+}
+
+/* Error Message */
+.errorMessage {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.errorMessage p {
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Nearest Center Info */
+.nearestCenter {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  border: 2px solid #00ff00;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 25px rgba(0, 255, 0, 0.2);
+  animation: pulse 2s infinite;
+  width: 80%;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 8px 25px rgba(0, 255, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 8px 25px rgba(0, 255, 0, 0.4);
+  }
+  100% {
+    box-shadow: 0 8px 25px rgba(0, 255, 0, 0.2);
+  }
+}
+
+.nearestCenter h3 {
+  color: #008080;
+  margin: 0 0 20px 0;
+  /* font-size: 1.5rem; */
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.centerInfo h4 {
+  color: #333;
+  /* margin: 0 0 15px 0; */
+  /* font-size: 1.3rem; */
+  /* font-weight: 600; */
+}
+
+.centerInfo p {
+  margin: 8px 0;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.distance {
+  font-weight: 700;
+  /* color: #008080; */
+  /* font-size: 1.1rem; */
+}
+
+.services {
+  margin: 15px 0;
+}
+
+.services strong {
+  color: #333;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.services ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.services li {
+  background: linear-gradient(135deg, #008080, #20b2aa);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.focusBtn,
+.viewBtn {
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.focusBtn:hover,
+.viewBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+}
+
+/* Map Wrapper */
+.mapWrapper {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 40px;
+  overflow: hidden;
+  box-shadow: 1px 2px 10px;
+  height: auto; 
+}
+
+.leafletMap {
+  height: 100%;
+  width: 100%;
+}
+
+/* Popup Content */
+.popupContent {
+  min-width: 250px;
+}
+
+.popupContent h4 {
+  color: #008080;
+  margin: 0 0 10px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.popupContent p {
+  margin: 5px 0;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+}
+
+.nearestTag {
+  background: linear-gradient(135deg, #00ff00, #32cd32);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin: 5px 0;
+}
+
+/* Centers List */
+.centersList {
+  margin-top: 40px;
+}
+
+.centersList h3 {
+  color: #008080;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.centersGrid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.centerCard {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+}
+
+.centerCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.centerCard h4 {
+  color: #008080;
+  margin: 0 0 15px 0;
+  /* font-size: 1.3rem; */
+  font-weight: 600;
+}
+
+.centerCard p {
+  margin: 8px 0;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* font-size: 0.95rem; */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .mapContainer {
+    padding: 20px 10px;
+  }
+
+  .mapHeader {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .mapHeader h2 {
+    font-size: 2rem;
+    justify-content: center;
+  }
+
+  .mapControls {
+    justify-content: center;
+  }
+
+  .mapWrapper {
+    height: 400px;
+  }
+
+  .centersGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .nearestCenter {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mapHeader h2 {
+    font-size: 1.5rem;
+  }
+
+  .locationBtn,
+  .resetBtn {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+
+  .mapWrapper {
+    height: 350px;
+  }
+
+  .centerCard {
+    padding: 20px;
+  }
+
+  .popupContent {
+    min-width: 200px;
+  }
+}
+
+/* Loading Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.locationBtn:disabled::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}

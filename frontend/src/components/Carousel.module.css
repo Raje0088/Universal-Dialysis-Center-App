@@ -1,0 +1,86 @@
+.animate-fadeIn {
+  animation: fadeIn 0s ease-in-out forwards;
+}
+
+.carousel-slide {
+  animation: slideLeftToRight 30s linear infinite;
+  background-size: 150% auto !important;
+  background-position: 0% center !important;
+  transition: background-image 1s ease-in-out;
+}
+
+.typing-container {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.typing-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid var(--primary-bg);
+  width: 0;
+  margin: 0 auto;
+  position: absolute;
+}
+
+.typing-text.typing-in {
+  animation: typing-expand 3s steps(40, end) forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+.typing-text.typing-out {
+  width: 100%;
+  animation: typing-collapse 1.5s steps(40, end) forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeftToRight {
+  0% {
+    background-position: 0% center !important;
+  }
+  100% {
+    background-position: 100% center !important;
+  }
+}
+
+@keyframes typing-expand {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typing-collapse {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--primary-bg);
+  }
+}

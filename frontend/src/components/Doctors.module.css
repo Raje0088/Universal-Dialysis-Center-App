@@ -1,0 +1,26 @@
+/* .scroll-container{
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+    background-color: var(--primary-bg);
+}
+.scroll-content{
+    display: inline-block;
+    margin: 10px;
+    align-items: center;
+    animation: scroll 5s linear infinite;
+}
+
+.scroll-item{
+    display: inline-block;
+}
+
+@keyframes scroll {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-50%);
+    }
+} */
