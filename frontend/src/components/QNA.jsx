@@ -29,36 +29,51 @@ const QNA = () => {
     setIndex(index === idx ? null : idx);
   };
   return (
-    <div className="w-full h-auto flex flex-col gap-5 items-center justify-center px-20 bg-[#f7fcfc] py-10">
-      <h2 className="underline underline-offset-8 decoration-[var(--primary-bg)]">
+    <div className="w-full h-auto flex flex-col gap-5 items-center justify-center px-10 md:px-20 bg-[#f7fcfc] py-10">
+      <h2 className="underline-center tracking-wider">
         Frequently Asked Questions
       </h2>
-      <p>
-        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-        consectetur velit
+      <p className="text-gray-600 text-center max-w-2xl">
+        Get quick answers to the most common questions from our patients.
       </p>
-      <div className="w-full h-auto ">
+ <div className="w-full md:w-3/4 lg:w-2/3 flex flex-col gap-4">
         {qna.map((item, idx) => (
-          <div key={idx} className="p-2 m-2 bg-white border-1">
+          <div
+            key={idx}
+            className={`bg-white rounded-2xl shadow-md hover:shadow-lg border border-gray-100 transition-all duration-300 ${
+              index === idx ? "border-[var(--primary-bg)]" : ""
+            }`}
+          >
+            {/* Question */}
             <div
-              className="w-full h-auto cursor-pointer text-[var(--primary-bg)] flex items-center justify-between"
-              onClick={() => {
-                handleToggle(idx);
-              }}
+              onClick={() => handleToggle(idx)}
+              className="w-full flex justify-between items-center px-5 py-4 cursor-pointer"
             >
-              <p>{item.que}</p>
+              <p
+                className={`font-medium text-gray-800 transition-colors duration-300 ${
+                  index === idx ? "text-[var(--primary-bg)]" : ""
+                }`}
+              >
+                {item.que}
+              </p>
               <MdKeyboardArrowRight
-                className={`text-2xl transition-all duration-500 ease-in-out ${
-                  index === idx ? "rotate-90" : ""
+                className={`text-2xl transform transition-transform duration-500 ease-in-out ${
+                  index === idx ? "rotate-90 text-[var(--primary-bg)]" : "text-gray-500"
                 }`}
               />
             </div>
+
+            {/* Answer */}
             <div
-              className={`transition-all duration-500 ease-in-out overflow-hidden ${
-                index === idx ? "max-h-40 opacity-100" : "max-h-0 opacity-0"
+              className={`px-5 overflow-hidden transition-all duration-500 ease-in-out ${
+                index === idx
+                  ? "max-h-40 opacity-100 pb-4"
+                  : "max-h-0 opacity-0"
               }`}
             >
-              <p className="mt-2">{item.ans}</p>
+              <p className="text-gray-600 leading-relaxed text-sm md:text-base">
+                {item.ans}
+              </p>
             </div>
           </div>
         ))}

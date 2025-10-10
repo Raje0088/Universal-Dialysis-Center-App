@@ -1,131 +1,85 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import Slider from "react-slick";
 import doc1 from "../assets/Doctor/doctors-1.jpg";
 import doc2 from "../assets/Doctor/doctors-2.jpg";
-import Slider from "react-slick";
-import { FaFacebook, FaInstagram, FaLinkedin  } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import styles from "./Doctors.module.css";
+
+const doctorItems = [
+  { id: 0, img: doc1, name: "Raj", profession: "Developer" },
+  { id: 1, img: doc2, name: "Raje", profession: "Specialist" },
+  { id: 2, img: doc1, name: "Kunal", profession: "Trainer" },
+  { id: 3, img: doc2, name: "Rutuj", profession: "Developer" },
+  { id: 4, img: doc1, name: "Shikha", profession: "Developer" },
+  { id: 5, img: doc2, name: "Golu", profession: "Specialist" },
+  { id: 6, img: doc1, name: "Molu", profession: "Trainer" },
+  { id: 7, img: doc2, name: "Diresh", profession: "Developer" },
+];
 
 const Doctors = () => {
-  const doctorItems = [
-    {
-      id: 0,
-      img: doc1,
-      name: "raj",
-      profession: "developer",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis modi pariatur deserunt error consectetur fugit!",
-    },
-    {
-      id: 1,
-      img: doc2,
-      name: "Raje",
-      profession: "specialist",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis modi pariatur deserunt error consectetur fugit!",
-    },
-    {
-      id: 2,
-      img: doc1,
-      name: "kunal",
-      profession: "trainer",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis modi pariatur deserunt error consectetur fugit!",
-    },
-    {
-      id: 3,
-      img: doc2,
-      name: "rutuj",
-      profession: "developer",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis modi pariatur deserunt error consectetur fugit!",
-    },
-    {
-      id: 4,
-      img: doc1,
-      name: "Shikha",
-      profession: "developer",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis modi pariatur deserunt error consectetur fugit!",
-    },
-    {
-      id: 5,
-      img: doc2,
-      name: "Golu",
-      profession: "specialist",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis modi pariatur deserunt error consectetur fugit!",
-    },
-    {
-      id: 6,
-      img: doc1,
-      name: "Molu",
-      profession: "trainer",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis modi pariatur deserunt error consectetur fugit!",
-    },
-    {
-      id: 7,
-      img: doc2,
-      name: "diresh",
-      profession: "developer",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis modi pariatur deserunt error consectetur fugit!",
-    },
-  ];
+  const [slidesToShow, setSlidesToShow] = useState(4);
+
+  // 🔹 Detect screen size on load + resize
+  const updateSlides = () => {
+    const width = window.innerWidth;
+    if (width < 480) setSlidesToShow(1);
+    else if (width < 768) setSlidesToShow(2);
+    else if (width < 1024) setSlidesToShow(3);
+    else setSlidesToShow(4);
+  };
+
+  useEffect(() => {
+    updateSlides(); // Run once on mount
+    window.addEventListener("resize", updateSlides);
+    return () => window.removeEventListener("resize", updateSlides);
+  }, []);
 
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
-    slidesToShow: 5,
+    speed: 700,
+    slidesToShow: slidesToShow,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 2500,
     pauseOnHover: true,
-    arrows: false,
-    responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
-      { breakpoint: 640, settings: { slidesToShow: 1 } },
-    ],
   };
+
   return (
-    <div className="w-full h-auto flex flex-col gap-5 items-center justify-center px-10 md:px-20 bg-[#f7fcfc] py-10">
-      <h2 className="underline-center tracking-widest"> 
-        Doctors
+    <div className="w-full h-auto flex flex-col items-center px-5 md:px-20 py-12 bg-[#f7fcfc]">
+      <h2 className="text-2xl md:text-3xl font-bold text-[var(--primary-bg)] mb-2">
+        Our Expert Doctors
       </h2>
-      <p>
-        Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
-        consectetur velit
+      <p className="text-gray-600 text-center max-w-2xl mb-8">
+        Meet our team of professional and experienced specialists.
       </p>
-      <div className="w-full h-auto">
+
+      <div className="w-full">
         <Slider {...settings}>
-          {doctorItems.map((item, idx) => (
-            <div
-              key={idx}
-              className="bg-[var(--primary--bg)] p-4  shadow-2xl rounded-2xl group"
-            >
-              <div className="w-auto  h-auto group relative  overflow-hidden">
-                <div className="w-full ">
+          {doctorItems.map((item) => (
+            <div key={item.id} className="px-3">
+              <div className="bg-white rounded-2xl shadow-lg group overflow-hidden relative">
+                <div className="relative overflow-hidden rounded-xl">
                   <img
                     src={item.img}
-                    alt=""
-                    className="w-full h-auto md:h-48 object-cover rounded-lg"
+                    alt={item.name}
+                    className="w-full h-64 object-cover rounded-xl transform group-hover:scale-110 transition-all duration-700"
                   />
+                  <div className="absolute left-1/2 -translate-x-1/2 bottom-[-60px] flex gap-3 text-white transition-all duration-700 ease-in-out group-hover:bottom-4">
+                    {[FaFacebook, FaInstagram, FaLinkedin, FaXTwitter].map(
+                      (Icon, i) => (
+                        <Icon
+                          key={i}
+                          className="bg-[var(--primary-bg)] p-2 rounded-full w-8 h-8 hover:bg-[#0f7c7c]"
+                        />
+                      )
+                    )}
+                  </div>
                 </div>
-
-                <div className="absolute left-1/2 -translate-x-1/2 bottom-[-60px]  flex gap-2 text-[24px] transition-all duration-700 ease-in-out  group-hover:bottom-4">
-                  <FaFacebook />
-                  <FaInstagram />
-                  <FaLinkedin />
-                 <FaXTwitter />
+                <div className="text-center mt-4 px-2 pb-4">
+                  <h4 className="text-lg font-semibold text-gray-800">{item.name}</h4>
+                  <p className="text-sm text-gray-600">{item.profession}</p>
                 </div>
-              </div>
-              <div className="p-4">
-                <h4>{item.name}</h4>
-                <p>{item.profession}</p>
               </div>
             </div>
           ))}

@@ -24,3 +24,13 @@
         transform: translateX(-50%);
     }
 } */
+
+
+.slick-slide {
+  padding: 0 6px; /* small spacing between cards */
+}
+
+.slick-list {
+  overflow: visible !important; /* prevent clipping on hover */
+}
+

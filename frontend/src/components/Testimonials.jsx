@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
 import styles from "./Testimonials.module.css";
 import { FaChevronLeft, FaChevronRight, FaUser } from "react-icons/fa";
-
+import doc from "../assets/Doctor/doctors-1.jpg";
 const Testimonials = () => {
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const carouselRef = useRef(null);
   const testimonialRefs = useRef([]);
-  
+
   const testimonialItems = [
     {
       id: 0,
-      img: "ds",
+      img: doc,
       name: "Raj Kumar",
       profession: "Patient",
       description:
@@ -19,7 +19,7 @@ const Testimonials = () => {
     },
     {
       id: 1,
-      img: "ds",
+      img: doc,
       name: "Rajesh Patel",
       profession: "Family Member",
       description:
@@ -27,7 +27,7 @@ const Testimonials = () => {
     },
     {
       id: 2,
-      img: "ds",
+      img: doc,
       name: "Kunal Singh",
       profession: "Patient",
       description:
@@ -35,7 +35,7 @@ const Testimonials = () => {
     },
     {
       id: 3,
-      img: "ds",
+      img: doc,
       name: "Rutuj Mehta",
       profession: "Healthcare Professional",
       description:
@@ -43,7 +43,7 @@ const Testimonials = () => {
     },
     {
       id: 4,
-      img: "ds",
+      img: doc,
       name: "Om Sharma",
       profession: "Patient",
       description:
@@ -54,27 +54,27 @@ const Testimonials = () => {
   // Handle mouse movement for 3D effect
   const handleMouseMove = (e, index) => {
     if (!testimonialRefs.current[index]) return;
-    
+
     const card = testimonialRefs.current[index];
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
-    
+
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
-    
+
     const rotateX = (y - centerY) / 10;
     const rotateY = (centerX - x) / 10;
-    
-    card.style.setProperty('--mouse-x', `${x}px`);
-    card.style.setProperty('--mouse-y', `${y}px`);
+
+    card.style.setProperty("--mouse-x", `${x}px`);
+    card.style.setProperty("--mouse-y", `${y}px`);
     card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   };
-  
+
   const handleMouseLeave = (index) => {
     if (!testimonialRefs.current[index]) return;
     const card = testimonialRefs.current[index];
-    card.style.transform = 'rotateX(0) rotateY(0)';
+    card.style.transform = "rotateX(0) rotateY(0)";
   };
 
   useEffect(() => {
@@ -100,38 +100,56 @@ const Testimonials = () => {
   const handleDotClick = (dotIndex) => {
     setIndex(dotIndex);
   };
+  // 🔻 Added for responsive card scrolling
+  const getVisibleCards = () => {
+    if (window.innerWidth <= 768) return 1; // mobile
+    if (window.innerWidth <= 1024) return 2; // tablet
+    return 3; // desktop
+  };
 
   return (
     <div className="w-full h-auto flex flex-col gap-5 items-center justify-center px-10 md:px-20 py-10">
-
       <h2 className=" tracking-widest  underline-center">Testimonials</h2>
 
-      
       <div className={styles["testimonials-container"]}>
-        <div 
+        <div
           ref={carouselRef}
-          className={styles["testimonials-track"]} 
-          style={{ transform: `translateX(-${index * (100 / 3)}%)` }}
+          className={styles["testimonials-track"]}
+          style={{
+            transform: `translateX(-${index * (100 / getVisibleCards())}%)`,
+          }}
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
           {testimonialItems.map((item, idx) => (
             <div key={item.id} className={styles["testimonial-item"]}>
-              <div 
+              <div
                 className={styles["testimonial-card"]}
-                ref={el => testimonialRefs.current[idx] = el}
+                ref={(el) => (testimonialRefs.current[idx] = el)}
                 onMouseMove={(e) => handleMouseMove(e, idx)}
                 onMouseLeave={() => handleMouseLeave(idx)}
               >
                 <div className={styles["testimonial-content"]}>
-                  <p className={styles["testimonial-description"]}>"{item.description}"</p>
+                  <p className={styles["testimonial-description"]}>
+                    "{item.description}"
+                  </p>
                   <div className={styles["testimonial-author"]}>
                     <div className={styles["author-image"]}>
-                      {item.img === "ds" ? <FaUser size={20} /> : <img src={item.img} alt={item.name} />}
+                      {item.img === "ds" ? (
+                        <FaUser size={40} />
+                      ) : (
+                        <img
+                          src={item.img}
+                          alt={item.name}
+                          className="w-full h-full object-cover object-center"
+                        />
+                      )}
                     </div>
                     <div className={styles["author-info"]}>
                       <p className={styles["author-name"]}>{item.name}</p>
-                      <p className={styles["author-profession"]}>{item.profession}</p>
+                      <p className={styles["author-profession"]}>
+                        {item.profession}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -151,9 +169,9 @@ const Testimonials = () => {
 
         <div className={styles["dots-container"]}>
           {testimonialItems.map((_, idx) => (
-            <div 
-              key={idx} 
-              className={`${styles.dot} ${idx === index ? styles.active : ''}`}
+            <div
+              key={idx}
+              className={`${styles.dot} ${idx === index ? styles.active : ""}`}
               onClick={() => handleDotClick(idx)}
             />
           ))}

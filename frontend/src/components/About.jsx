@@ -82,8 +82,8 @@ const About = () => {
           </div>
 
           <div className="w-full md:w-1/2 h-auto">
-            <h2>Why Choose Us?</h2>
-            <ul>
+            <h2 className="pb-4">Why Choose Us?</h2>
+            <ul className="pb-4">
               <li>State-of-the-art dialysis equipment and technology</li>
               <li>Private treatment rooms for comfort and privacy </li>
               <li>
@@ -95,53 +95,20 @@ const About = () => {
               <li>Clean, welcoming, and safe environment</li>
               <li>24/7 availability for emergencies and support</li>
             </ul>
-            <h4>Compassionate care, advanced technology, better lives.</h4>
+            <h4 className="text-[16px] font-bold ">
+              Compassionate care, advanced technology, better lives.
+            </h4>
           </div>
         </div>
-        <div>
-          <h4 className="text-center ">
+        <div className="w-full ">
+          <h2 className="text-center font-semibold text-[var(--primary-bg)] uppercase py-10 lg:px-20 tracking-wide">
             We strive to create a friendly, professional, and supportive
             environment, where patients and their families feel confident in the
             care they receive.
-          </h4>
+          </h2>
         </div>
       </div>
 
-      <div className="relative w-full h-[60vh] md:h-screen rounded-lg overflow-hidden">
-        <video
-          src={awardvideo}
-          autoPlay
-          muted
-          loop
-          controls
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-black/40 flex flex-col pb-4 items-center justify-end text-white text-center px-4">
-          <h1 className="text-xl sm:text-3xl md:text-5xl font-bold">
-            Our Awards & Achievements
-          </h1>
-          <p className="mt-3 text-sm sm:text-base md:text-lg max-w-2xl">
-            Excellence in dialysis care and patient support, recognized
-            globally.
-          </p>
-        </div>
-      </div>
-      <div className="w-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 py-10">
-        {[data1, data2, data3, trophy].map((item, i) => (
-          <div
-            key={i}
-            className={`w-full ${
-              i === 3 ? "h-40 sm:h-48" : "h-auto"
-            } image-card`}
-          >
-            <img
-              src={item}
-              alt=""
-              className="w-full h-full object-cover rounded-lg duration-300 ease-in-out hover:scale-105"
-            />
-          </div>
-        ))}
-      </div>
     </div>
   );
 };

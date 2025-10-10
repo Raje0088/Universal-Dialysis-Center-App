@@ -563,7 +563,7 @@ const dialysisCenters = [
     phone: "+91-80-4567-8901",
     hours: "24/7 Emergency Services",
     services: ["Hemodialysis", "Peritoneal Dialysis", "Home Dialysis"],
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60516.048987561255!2d73.8658945216797!3d18.56262640000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3e04dca5b35%3A0xe60a6f05a8c78018!2sEON%20HOSPITAL!5e0!3m2!1sen!2sin!4v1759915330404!5m2!1sen!2sin" 
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60516.048987561255!2d73.8658945216797!3d18.56262640000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c3e04dca5b35%3A0xe60a6f05a8c78018!2sEON%20HOSPITAL!5e0!3m2!1sen!2sin!4v1759915330404!5m2!1sen!2sin",
   },
   {
     id: 4,
@@ -575,7 +575,7 @@ const dialysisCenters = [
     phone: "+91-44-2890-1234",
     hours: "6:00 AM - 11:00 PM",
     services: ["Hemodialysis", "Peritoneal Dialysis", "Pediatric Care"],
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.029077590969!2d73.87510107393709!3d18.57272776758145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c0d2739e99f3%3A0xec4c3c4a3bb12218!2sVinod%20memorial%20multi-speciality%20hospital!5e0!3m2!1sen!2sin!4v1759915368177!5m2!1sen!2sin" 
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.029077590969!2d73.87510107393709!3d18.57272776758145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c0d2739e99f3%3A0xec4c3c4a3bb12218!2sVinod%20memorial%20multi-speciality%20hospital!5e0!3m2!1sen!2sin!4v1759915368177!5m2!1sen!2sin",
   },
   {
     id: 5,
@@ -587,7 +587,7 @@ const dialysisCenters = [
     phone: "+91-33-2267-5432",
     hours: "24/7 Emergency Services",
     services: ["Hemodialysis", "Peritoneal Dialysis", "ICU Support"],
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30259.941831848326!2d73.8588892882988!3d18.55181186901732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c10daec1fe45%3A0x582b0f27b3cb8482!2sKasturba%20Hospital%2C%20Vishrantwadi%2C%20Pune!5e0!3m2!1sen!2sin!4v1759915413897!5m2!1sen!2sin"
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30259.941831848326!2d73.8588892882988!3d18.55181186901732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c10daec1fe45%3A0x582b0f27b3cb8482!2sKasturba%20Hospital%2C%20Vishrantwadi%2C%20Pune!5e0!3m2!1sen!2sin!4v1759915413897!5m2!1sen!2sin",
   },
   {
     id: 6,
@@ -599,7 +599,7 @@ const dialysisCenters = [
     phone: "+91-40-4012-3456",
     hours: "6:00 AM - 10:00 PM",
     services: ["Hemodialysis", "Peritoneal Dialysis", "Transplant Support"],
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.411177125822!2d73.90712177393789!3d18.60056676672829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c6c0ffcb1773%3A0x14c46264ebd4f180!2sOrchid%20Speciality%20Hospital!5e0!3m2!1sen!2sin!4v1759915457911!5m2!1sen!2sin"
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.411177125822!2d73.90712177393789!3d18.60056676672829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c6c0ffcb1773%3A0x14c46264ebd4f180!2sOrchid%20Speciality%20Hospital!5e0!3m2!1sen!2sin!4v1759915457911!5m2!1sen!2sin",
   },
   {
     id: 7,
@@ -611,7 +611,7 @@ const dialysisCenters = [
     phone: "+91-20-2613-7890",
     hours: "24/7 Emergency Services",
     services: ["Hemodialysis", "Peritoneal Dialysis", "Consultation"],
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.417532908655!2d73.90706982393782!3d18.600280616737084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c776e82d276b%3A0x8003078e8b17d370!2sSai%20Shradha%20Health%20Care%20Centre!5e0!3m2!1sen!2sin!4v1759915495668!5m2!1sen!2sin"
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.417532908655!2d73.90706982393782!3d18.600280616737084!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c776e82d276b%3A0x8003078e8b17d370!2sSai%20Shradha%20Health%20Care%20Centre!5e0!3m2!1sen!2sin!4v1759915495668!5m2!1sen!2sin",
   },
   {
     id: 8,
@@ -623,7 +623,7 @@ const dialysisCenters = [
     phone: "+91-79-2630-4567",
     hours: "6:00 AM - 11:00 PM",
     services: ["Hemodialysis", "Peritoneal Dialysis", "Emergency Care"],
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.867297027528!2d74.01975537393484!3d18.489669220120028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e962952e9f33%3A0x981154a5a58c7c16!2sVishwaRaj%20Hospital%20Pune!5e0!3m2!1sen!2sin!4v1759915543764!5m2!1sen!2sin"
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.867297027528!2d74.01975537393484!3d18.489669220120028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2e962952e9f33%3A0x981154a5a58c7c16!2sVishwaRaj%20Hospital%20Pune!5e0!3m2!1sen!2sin!4v1759915543764!5m2!1sen!2sin",
   },
   {
     id: 9,
@@ -635,7 +635,7 @@ const dialysisCenters = [
     phone: "+91-141-2367-8901",
     hours: "6:00 AM - 10:00 PM",
     services: ["Hemodialysis", "Peritoneal Dialysis", "Home Care"],
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.389166672035!2d73.76736777393661!3d18.55648566807868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf51c774426b%3A0xa9cc5ad052c75e55!2sUrokul%20Hospital!5e0!3m2!1sen!2sin!4v1759915623540!5m2!1sen!2sin"
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.389166672035!2d73.76736777393661!3d18.55648566807868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf51c774426b%3A0xa9cc5ad052c75e55!2sUrokul%20Hospital!5e0!3m2!1sen!2sin!4v1759915623540!5m2!1sen!2sin",
   },
   {
     id: 10,
@@ -647,7 +647,7 @@ const dialysisCenters = [
     phone: "+91-484-2345-6789",
     hours: "24/7 Emergency Services",
     services: ["Hemodialysis", "Peritoneal Dialysis", "Pediatric Care"],
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7563.114953057825!2d73.77741647770995!3d18.593978999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b96e9f1ecb29%3A0x4eb944ff1993d1!2sGastrohub%20Hospital!5e0!3m2!1sen!2sin!4v1759915671139!5m2!1sen!2sin"
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7563.114953057825!2d73.77741647770995!3d18.593978999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b96e9f1ecb29%3A0x4eb944ff1993d1!2sGastrohub%20Hospital!5e0!3m2!1sen!2sin!4v1759915671139!5m2!1sen!2sin",
   },
   {
     id: 11,
@@ -659,7 +659,7 @@ const dialysisCenters = [
     phone: "+91-484-2345-6789",
     hours: "24/7 Emergency Services",
     services: ["Hemodialysis", "Peritoneal Dialysis", "Pediatric Care"],
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.8404386680554!2d74.08096077394846!3d18.982652954898906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdd2e8c04bf988b%3A0x7f3bbcb480ca182c!2sADHAR%20SUPERSPECIALITY%20HOSPITAL!5e0!3m2!1sen!2sin!4v1759915712069!5m2!1sen!2sin"
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.8404386680554!2d74.08096077394846!3d18.982652954898906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdd2e8c04bf988b%3A0x7f3bbcb480ca182c!2sADHAR%20SUPERSPECIALITY%20HOSPITAL!5e0!3m2!1sen!2sin!4v1759915712069!5m2!1sen!2sin",
   },
   {
     id: 12,
@@ -671,7 +671,7 @@ const dialysisCenters = [
     phone: "+91-484-2345-6789",
     hours: "24/7 Emergency Services",
     services: ["Hemodialysis", "Peritoneal Dialysis", "Pediatric Care"],
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.250172848647!2d73.80772042393683!3d18.56275671788677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf85f7cb2933%3A0x11e85893cd229e97!2sAIMS%20HOSPITAL%20AND%20RESEARCH%20CENTER!5e0!3m2!1sen!2sin!4v1759915793586!5m2!1sen!2sin"
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.250172848647!2d73.80772042393683!3d18.56275671788677!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf85f7cb2933%3A0x11e85893cd229e97!2sAIMS%20HOSPITAL%20AND%20RESEARCH%20CENTER!5e0!3m2!1sen!2sin!4v1759915793586!5m2!1sen!2sin",
   },
   {
     id: 13,
@@ -683,7 +683,7 @@ const dialysisCenters = [
     phone: "+91-484-2345-6789",
     hours: "24/7 Emergency Services",
     services: ["Hemodialysis", "Peritoneal Dialysis", "Pediatric Care"],
-    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120981.91166725199!2d73.63490184335936!3d18.633244500000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9b96f6d7f11%3A0x83eed37a336ddf06!2s7%20Orange%20Hospital!5e0!3m2!1sen!2sin!4v1759915840307!5m2!1sen!2sin"
+    map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120981.91166725199!2d73.63490184335936!3d18.633244500000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b9b96f6d7f11%3A0x83eed37a336ddf06!2s7%20Orange%20Hospital!5e0!3m2!1sen!2sin!4v1759915840307!5m2!1sen!2sin",
   },
 ];
 
@@ -775,9 +775,11 @@ const Map = () => {
 
   return (
     <div className={`${styles.main}`}>
-      <div className={`px-10 md:px-20 {styles.mapContainer}`}>
+      <div className={`px-10 md:px-20 ${styles.mapContainer}`}>
         <div className={styles.mapHeader}>
-          <h2 className=" tracking-widest  underline-center">Universal Dialysis Centers</h2> 
+          <h2 className=" tracking-widest  underline-center">
+            Universal Dialysis Centers
+          </h2>
           <div className={styles.mapControls}>
             <button
               onClick={getCurrentLocation}
@@ -813,12 +815,14 @@ const Map = () => {
               <p className={styles.distance}>
                 Distance: {nearestCenter.distance} km
               </p>
-              <button
-                onClick={() => openGoogleMaps(nearestCenter)}
-                className={styles.focusBtn}
-              >
-                Open Google Maps 
-              </button>
+              <div className={styles.btndiv}>
+                <button
+                  onClick={() => openGoogleMaps(nearestCenter)}
+                  className={styles.focusBtn}
+                >
+                  Open Google Maps
+                </button>
+              </div>
             </div>
           </div>
         )}
@@ -836,9 +840,11 @@ const Map = () => {
         </div>
 
         <div className={styles.centersList}>
-          <h3 className="underline-center">All Universal Dialysis Centers in Pune</h3>
+          <h3 className="underline-center">
+            All Universal Dialysis Centers in Pune
+          </h3>
           <div className={styles.centersGrid}>
-            {dialysisCenters.map((center,index) => (
+            {dialysisCenters.map((center, index) => (
               <div key={center.id} className={styles.centerCard}>
                 <h4>{center.name}</h4>
                 <p>
@@ -865,7 +871,12 @@ const Map = () => {
                   </p>
                 )}
                 <div className="flex whitespace-nowrap text-sm items-center justify-center">
-                  <button onClick={() => {setMapId(index)}} className={styles.focusBtn}>
+                  <button
+                    onClick={() => {
+                      setMapId(index);
+                    }}
+                    className={styles.focusBtn}
+                  >
                     View Map
                   </button>
                   <button

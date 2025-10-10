@@ -5,6 +5,7 @@ import care from "../assets/SVG/care.svg";
 import support from "../assets/SVG/support.svg";
 import team from "../assets/SVG/team.svg";
 import bed from "../assets/SVG/hospital-bed.svg";
+import two47 from "../assets/SVG/247.png";
 import clean from "../assets/SVG/ecology.svg";
 import appointment from "../assets/SVG/appointment.svg";
 import docGif from "../assets/SVG/doctors-office.gif"
@@ -52,6 +53,12 @@ const Cards = () => {
       id: 7,
       img: clean,
       title: "Clean and welcoming environment",
+      description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    },
+    {
+      id: 8,
+      img: two47,
+      title: "24/7 emergency dialysis support and monitoring",
       description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
     },
   ];

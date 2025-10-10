@@ -17,6 +17,7 @@ import Gallery from "./components/Gallery";
 import Map from "./components/Map";
 import WhatsApp from "./components/WhatsApp";
 import Chatbot from "./components/Chatbot";
+import RecognizationAndAward from './components/RecognizationAndAward'
 
 function App() {
   return (
@@ -37,7 +38,6 @@ function App() {
       <div id="team">
         <Doctors />
       </div>
-      <MakeAppointment />
       <Department />
       <Testimonials />
       <Gallery />
@@ -47,7 +47,9 @@ function App() {
       <div id="contact">
         <Contact />
       </div>
+      <MakeAppointment />
       <Pricing />
+      <RecognizationAndAward />
       <QNA />
       <I2s2Footer />
       <WhatsApp />

@@ -118,8 +118,8 @@
 }
 
 .author-image {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   margin-right: 15px;
   background-color: #f0f0f0;
@@ -192,3 +192,85 @@
 .dot.active {
   background-color: var(--primary-bg);
 }
+
+
+/* 🔻🔻🔻 ADDED FOR RESPONSIVENESS 🔻🔻🔻 */
+
+/* For tablets (2 cards visible) */
+@media (max-width: 1024px) {
+  .testimonial-item {
+    width: calc(100% / 2);
+    padding: 0 10px;
+  }
+
+  .author-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .testimonial-description {
+    font-size: 0.95rem;
+  }
+}
+
+/* For mobile (1 card visible) */
+@media (max-width: 768px) {
+  .testimonial-item {
+    width: 100%;
+    padding: 0 8px;
+  }
+
+  .testimonial-card {
+    padding: 15px;
+  }
+
+  .testimonial-description {
+    font-size: 0.9rem;
+  }
+
+  .author-image {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+  }
+
+  .author-name {
+    font-size: 1rem;
+  }
+
+  .author-profession {
+    font-size: 0.8rem;
+  }
+
+  .controls {
+    gap: 6px;
+  }
+
+  .control-button {
+    width: 35px;
+    height: 35px;
+  }
+
+  .dots-container {
+    margin-top: 15px;
+    gap: 6px;
+  }
+}
+
+/* For very small screens (like older phones) */
+@media (max-width: 480px) {
+  .testimonial-description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .testimonial-card {
+    padding: 12px;
+  }
+
+  .author-image {
+    width: 50px;
+    height: 50px;
+  }
+}
+/* 🔺🔺🔺 END RESPONSIVE CHANGES 🔺🔺🔺 */

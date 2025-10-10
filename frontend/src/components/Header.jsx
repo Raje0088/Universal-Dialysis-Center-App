@@ -65,7 +65,7 @@ const Header = () => {
           />
         </div>
         <div
-          className={`text-nowrap hidden items-center justify-center gap-5 md:flex `}
+          className={`text-nowrap hidden items-center justify-center gap-5 lg:flex `}
         >
           <h4
             className="hover:text-[var(--primary-bg)] cursor-pointer"
@@ -149,19 +149,19 @@ const Header = () => {
           Make an Appointment
         </button>
         <IoMenu
-          className="flex text-2xl md:hidden"
+          className="flex md:text-4xl text-2xl lg:hidden"
           onClick={() => {
             setToggle((prev) => !prev);
           }}
         />
       </div>
       <div
-        className={`w-[40%] h-auto bg-gray-500  fixed right-0 transition-transform duration-500 ${
+        className={`w-[40%] md:w-auto h-auto bg-gray-500  fixed right-0 transition-transform duration-500 ${
           toggle === true ? "translate-x-0" : "translate-x-full"
         } `}
       >
         <div
-          className={`w-full h-full text-nowrap flex flex-col md:hidden gap-5 px-5 py-5 text-white`}
+          className={`w-full h-full text-nowrap flex flex-col lg:hidden gap-5 p-10 text-white`}
         >
            <h4
             className="hover:text-[var(--primary-bg)] cursor-pointer"

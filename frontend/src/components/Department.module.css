@@ -1,10 +1,32 @@
+/* Base hidden */
 .sidebarText {
   opacity: 0;
   transform: translateY(10px);
 }
 
-.animate {
-  animation: fadeIn 0.9s forwards;
+/* Animate for all small screens and tablets */
+@media (max-width: 1024px) {
+  .animate {
+    animation: slideFade 0.5s ease forwards;
+  }
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Large screens: desktop fadeIn */
+@media (min-width: 1025px) {
+  .animate {
+    animation: fadeIn 0.9s forwards;
+  }
 }
 
 @keyframes fadeIn {
@@ -13,6 +35,8 @@
     transform: translateY(0);
   }
 }
+
+/* Image fall animation */
 @keyframes fall {
   0% {
     transform: translateY(0);

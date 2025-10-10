@@ -165,13 +165,42 @@ const Services = () => {
   const handleMouseEnter = (service, event) => {
     const rect = event.currentTarget.getBoundingClientRect();
     const containerRect = containerRef.current?.getBoundingClientRect();
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
     
-    if (containerRect) {
-      setPopupPosition({
-        x: rect.left - containerRect.left + rect.width / 2,
-        y: rect.top - containerRect.top - 10,
-      });
+    // Calculate available space in different directions
+    const spaceAbove = rect.top;
+    const spaceBelow = viewportHeight - rect.bottom;
+    const spaceLeft = rect.left;
+    const spaceRight = viewportWidth - rect.right;
+    
+    // Default position (centered above)
+    let x = rect.left - containerRect.left + rect.width / 2;
+    let y = rect.top - containerRect.top - 10;
+    let position = 'top'; // Default position
+    
+    // Determine best position based on available space
+    if (spaceBelow > 250 && spaceBelow > spaceAbove) {
+      // Position below if there's more space
+      y = rect.bottom - containerRect.top + 10;
+      position = 'bottom';
+    } else if (spaceRight > 300 && spaceRight > spaceLeft) {
+      // Position to the right if there's more space
+      x = rect.right - containerRect.left + 10;
+      y = rect.top - containerRect.top + rect.height / 2;
+      position = 'right';
+    } else if (spaceLeft > 300) {
+      // Position to the left if there's space
+      x = rect.left - containerRect.left - 10;
+      y = rect.top - containerRect.top + rect.height / 2;
+      position = 'left';
     }
+    
+    setPopupPosition({
+      x,
+      y,
+      position
+    });
     
     setHoveredService(service);
     
@@ -194,40 +223,41 @@ const Services = () => {
     <div
       ref={containerRef}
       style={{ backgroundImage: `url(${dialysis})` }}
-      className="relative w-full min-h-screen bg-cover bg-center bg-fixed py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center overflow-hidden"
+      className="relative w-full min-h-screen bg-cover bg-center bg-fixed py-10 sm:py-12 md:py-16 px-2 sm:px-4 md:px-6 lg:px-8 flex flex-col items-center overflow-hidden"
     >
       {/* Background overlay for better readability */}
       <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       
       {/* Header */}
-      <div className="relative z-10 text-center mb-16">
-        <h2 className=" text-white underline-center tracking-wider">
+      <div className="relative z-10 text-center mb-8 sm:mb-10 md:mb-16">
+        <h2 className="text-white underline-center tracking-wider text-2xl sm:text-3xl md:text-4xl font-bold">
           Our Services
         </h2>
       </div>
 
       {/* Services Grid */}
-      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 max-w-7xl w-full">
+      <div className="relative z-10 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 xs:gap-5 sm:gap-6 md:gap-8 lg:gap-10 max-w-7xl w-full px-2 sm:px-4">
         {services.map((service, index) => (
           <div
             key={index}
             ref={(el) => (cardRefs.current[index] = el)}
-            className="group relative bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl p-6 sm:p-8 shadow-2xl cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-3xl hover:bg-opacity-100 min-h-[200px] sm:min-h-[220px] flex flex-col items-center justify-center text-center"
+            className="group relative bg-white bg-opacity-95 backdrop-blur-sm rounded-2xl p-4 xs:p-5 sm:p-6 md:p-8 shadow-2xl cursor-pointer transform transition-all duration-300 hover:scale-105 hover:shadow-3xl hover:bg-opacity-100 min-h-[160px] xs:min-h-[180px] sm:min-h-[200px] md:min-h-[220px] flex flex-col items-center justify-center text-center"
             onMouseEnter={(e) => handleMouseEnter(service, e)}
             onMouseLeave={handleMouseLeave}
+            onClick={(e) => handleMouseEnter(service, e)} /* Add click handler for mobile devices */
           >
             {/* Service Icon */}
-            <div className="text-2xl sm:text-5xl lg:text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+            <div className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300">
               {service.icon}
             </div>
             
             {/* Service Title */}
-            <h3 className="text-lg sm:text-xl lg:text-lg font-bold text-gray-800 group-hover:text-teal-600 transition-colors duration-300 leading-tight">
+            <h3 className="text-base xs:text-lg sm:text-xl md:text-lg font-bold text-gray-800 group-hover:text-teal-600 transition-colors duration-300 leading-tight">
               {service.title}
             </h3>
             
             {/* Hover indicator */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <div className="absolute bottom-3 sm:bottom-4 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <div className="w-2 h-2 bg-teal-500 rounded-full animate-pulse"></div>
             </div>
           </div>
@@ -237,14 +267,45 @@ const Services = () => {
       {/* Hover Popup */}
       {hoveredService && (
         <div
-          className="absolute z-50 bg-gray-900 bg-opacity-95 backdrop-blur-md text-white p-6 rounded-2xl shadow-2xl max-w-xs sm:max-w-sm lg:max-w-md transform -translate-x-1/2 -translate-y-full border border-teal-400"
+          className={`absolute z-50 bg-gray-900 bg-opacity-95 backdrop-blur-md text-white p-4 sm:p-6 rounded-2xl shadow-2xl max-w-[90vw] sm:max-w-sm lg:max-w-md border border-teal-400 transition-all duration-200`}
           style={{
-            left: `${popupPosition.x}px`,
-            top: `${popupPosition.y}px`,
+            left: popupPosition.position === 'left' 
+              ? `${popupPosition.x - 10}px` 
+              : popupPosition.position === 'right'
+                ? `${popupPosition.x}px`
+                : `${popupPosition.x}px`,
+            top: popupPosition.position === 'bottom'
+              ? `${popupPosition.y}px`
+              : popupPosition.position === 'left' || popupPosition.position === 'right'
+                ? `${popupPosition.y}px`
+                : `${popupPosition.y}px`,
+            transform: 
+              popupPosition.position === 'top' 
+                ? 'translate(-50%, -100%)' 
+                : popupPosition.position === 'bottom'
+                  ? 'translate(-50%, 0)'
+                  : popupPosition.position === 'left'
+                    ? 'translate(-100%, -50%)'
+                    : popupPosition.position === 'right'
+                      ? 'translate(0, -50%)'
+                      : 'translate(-50%, -100%)',
+            maxHeight: 'none',
+            overflow: 'visible'
           }}
         >
           {/* Popup arrow */}
-          <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-teal-400"></div>
+          {popupPosition.position === 'top' && (
+            <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-teal-400"></div>
+          )}
+          {popupPosition.position === 'bottom' && (
+            <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-b-8 border-l-transparent border-r-transparent border-b-teal-400"></div>
+          )}
+          {popupPosition.position === 'left' && (
+            <div className="absolute left-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-8 border-b-8 border-l-8 border-t-transparent border-b-transparent border-l-teal-400"></div>
+          )}
+          {popupPosition.position === 'right' && (
+            <div className="absolute right-full top-1/2 transform -translate-y-1/2 w-0 h-0 border-t-8 border-b-8 border-r-8 border-t-transparent border-b-transparent border-r-teal-400"></div>
+          )}
           
           {/* Popup content */}
           <div className="flex items-center mb-3">

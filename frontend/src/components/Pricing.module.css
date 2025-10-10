@@ -1,0 +1,267 @@
+/* Title animation */
+.title {
+  position: relative;
+  display: inline-block;
+  transform-style: preserve-3d;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--primary-bg);
+  transition: width 0.5s ease;
+}
+
+.title:hover::after {
+  width: 100%;
+}
+
+/* Card animation */
+.card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  animation: floatIn 0.8s ease-out forwards;
+}
+
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card hover effects */
+.cardActive {
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* Image styling */
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  height: 180px;
+  border-radius: 8px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.doctorImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.cardActive .doctorImage {
+  transform: scale(1.1);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.5)
+  );
+  opacity: 0.7;
+  transition: opacity 0.5s ease;
+}
+
+.cardActive .imageOverlay {
+  opacity: 0.3;
+}
+
+/* Price tag styling */
+.priceTag {
+  position: relative;
+  background: var(--primary-bg);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.priceTag::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+}
+
+.cardActive .priceTag {
+  transform: translateY(-5px) scale(1.1);
+}
+
+.cardActive .priceTag::before {
+  transform: scale(1);
+}
+
+/* Button animation */
+.pulseButton {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.pulseButton::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 150%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.pulseButton:hover::after {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+/* Swiper specific styles */
+.swiperContainer {
+  width: 100%;
+  padding: 30px 0;
+}
+
+.mySwiper {
+  width: 100%;
+  padding-bottom: 50px !important;
+}
+
+.swiperSlide {
+  height: auto;
+  transition: all 0.3s ease;
+}
+
+/* Override Swiper default styles */
+:global .swiper-pagination-bullet {
+  background: var(--primary-bg) !important;
+  opacity: 0.5;
+}
+
+:global .swiper-pagination-bullet-active {
+  opacity: 1;
+  background: var(--primary-bg) !important;
+}
+
+:global .swiper-button-next,
+:global .swiper-button-prev {
+  color: var(--primary-bg) !important;
+  background: rgba(255, 255, 255, 0.8);
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+:global .swiper-button-next:after,
+:global .swiper-button-prev:after {
+  font-size: 20px !important;
+}
+
+:global .swiper-container-3d .swiper-slide-shadow-left,
+:global .swiper-container-3d .swiper-slide-shadow-right {
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0)
+  ) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .imageWrapper {
+    height: 150px;
+  }
+
+  :global .swiper-button-next,
+  :global .swiper-button-prev {
+    width: 30px !important;
+    height: 30px !important;
+  }
+
+  :global .swiper-button-next:after,
+  :global .swiper-button-prev:after {
+    font-size: 16px !important;
+  }
+}
+
+.icon-wrapper {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gradient-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(
+    #00ffff,
+    #0099ff,
+    #6633ff,
+    #ff33cc,
+    #ff6600,
+    #00ffff
+  );
+  animation: spin-gradient 3s linear infinite;
+  z-index: 0;
+}
+
+.icon-inner {
+  position: relative;
+  z-index: 1;
+  color: white; /* you can change */
+  animation: slow-spin 4s linear infinite;
+}
+
+@keyframes spin-gradient {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slow-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+

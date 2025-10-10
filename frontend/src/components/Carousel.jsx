@@ -73,11 +73,11 @@ const Carousel = () => {
           <h1 className="text-center" >
             <span ref={e1}></span>
           </h1>
-          <h4 className="px-8 text-center ">
+          <h4 className="px-8 text-center leading-5">
            "Providing compassionate, high-quality dialysis care to enhance the
             lives of individuals with kidney disease."
           </h4>
-        { openMission && <p className="px-8 text-center italic">
+        { openMission && <p className="px-8 text-justify md:text-center leading-5   italic">
             Universal Dialysis Center is a state-of-the-art facility dedicated
             to delivering exceptional dialysis services to patients with
             end-stage renal disease (ESRD). Our center prioritizes
