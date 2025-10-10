@@ -11,6 +11,7 @@ import w4 from "../assets/Data/w4.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import stethoscope from "../assets/SVG/stethoscope.gif"
 
 const About = () => {
   const settings = {
@@ -23,7 +24,7 @@ const About = () => {
     autoplaySpeed: 2500,
     pauseOnHover: true,
     responsive: [
-      { breakpoint: 1024, settings: { slidesToShow: 2 } },
+      { breakpoint: 1024, settings: { slidesToShow: 1 } },
       { breakpoint: 640, settings: { slidesToShow: 1 } },
     ],
   };
@@ -74,7 +75,7 @@ const About = () => {
                   <img
                     src={item}
                     alt=""
-                    className="w-full h-full object-cover object-center p-2"
+                    className="w-full h-full object-cover object-center p-2"  
                   />
                 </div>
               ))}
@@ -100,11 +101,12 @@ const About = () => {
             </h4>
           </div>
         </div>
-        <div className="w-full ">
+        <div className="w-full h-[200px] relative flex items-center justify-center">
+          <img src={stethoscope} alt="" className="absolute z-[-1] opacity-20  w-auto h-full object-cover object-center " />
           <h2 className="text-center font-semibold text-[var(--primary-bg)] uppercase py-10 lg:px-20 tracking-wide">
             We strive to create a friendly, professional, and supportive
             environment, where patients and their families feel confident in the
-            care they receive.
+            care they receive. 
           </h2>
         </div>
       </div>

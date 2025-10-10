@@ -119,7 +119,7 @@ const Department = () => {
       </div>
       <div className="w-full flex flex-col lg:flex-row">
         {/* Left Side (Menu) */}
-        <div className="w-full lg:w-1/5 px-1 flex md:flex-col gap-1 md:gap-0 font-bold overflow-x-auto md:overflow-visible">
+        <div className={`${styles.tabletScroll}  w-full lg:w-1/5 px-1 flex lg:flex-col gap-1 md:gap-0 font-bold overflow-x-auto md:overflow-visible`}>
           {[
             "Preparing for Dialysis",
             "Working while on Dialysis",
@@ -148,16 +148,16 @@ const Department = () => {
             >
               {item}
             </p>
-          ))} 
+          ))}
         </div>
 
         {/* Middle Section (Content) */}
         <div className="w-full lg:w-3/5 px-3 md:px-5 mt-3 md:mt-0">
-  <div className="relative w-full overflow-x-auto lg:overflow-visible">
-    <h4 className="text-lg lg:text-xl font-semibold whitespace-nowrap inline-block min-w-full">
-      {departmentItem[departIndex].title}
-    </h4>
-  </div>
+          <div className="relative w-full overflow-x-auto lg:overflow-visible">
+            <h4 className="text-lg lg:text-xl font-semibold whitespace-nowrap inline-block min-w-full">
+              {departmentItem[departIndex].title}
+            </h4>
+          </div>
           <div className={`p-2 lg:p-4 flex flex-col gap-2 ${styles.sidebar}`}>
             {[
               departmentItem[departIndex].des1,

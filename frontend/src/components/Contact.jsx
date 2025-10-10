@@ -9,7 +9,7 @@ const Contact = () => {
       <h2 className="underline underline-offset-8 decoration-[var(--primary-bg)]">
         Contact
       </h2>
-      <div className="w-full h-full flex flex-col md:flex-row gap-5">
+      <div className="w-full h-full flex flex-col md:flex-row gap-15">
         <div className=" w-full md:w-1/2 h-auto flex flex-col gap-5">
           <div className="w-full  flex flex-col gap-0 bg-white p-2 items-center justify-center shadow-md rounded-2xl">
             <div className="w-full flex justify-center">
@@ -23,7 +23,7 @@ const Contact = () => {
               </div>
               <div className="w-full ">
                 <ul className="font-semibold list-none">
-                  <li >
+                  <li>
                     Universal Dialysis at NM Wadia Heart institute of Cardiology
                     Hospital, 3rd Floor, 32, Sasoon Rd, Central Excise Colony,
                     Sangamvadi, Pune, Maharashtra 411001
@@ -62,7 +62,7 @@ const Contact = () => {
               </div>
               <div className="w-full ">
                 <ul className="grid grid-cols-2 font-semibold  items-center justify-center">
-                            <li> 93210 26100 </li>
+                  <li> 93210 26100 </li>
                   <li>9607008436</li>
                   <li>9607008438</li>
                   <li>8956604412 </li>
@@ -70,13 +70,12 @@ const Contact = () => {
               </div>
             </div>
           </div>
-
         </div>
         <div className="w-full md:w-1/2 h-auto p-2 flex flex-col gap-5">
-        <div className="w-fullp-2 flex items-center justify-center">
-          <h4 className="font-bold">Want to Send Mail?</h4>
-        </div>
-          <div className="w-full h-auto grid grid-cols-2 gap-10">
+          <div className="w-fullp-2 flex items-center justify-center">
+            <h4 className="font-bold">Connect Us We'd love to help!</h4>
+          </div>
+          <div className="w-full h-auto grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-5">
             <input
               type="text"
               className="w-full bg-white border-1 p-2"

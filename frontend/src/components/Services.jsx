@@ -230,7 +230,7 @@ const Services = () => {
       
       {/* Header */}
       <div className="relative z-10 text-center mb-8 sm:mb-10 md:mb-16">
-        <h2 className="text-white underline-center tracking-wider text-2xl sm:text-3xl md:text-4xl font-bold">
+        <h2 className="text-white underline-center tracking-wider">
           Our Services
         </h2>
       </div>

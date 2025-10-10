@@ -5,6 +5,8 @@ import { GoClock } from "react-icons/go";
 import logo from "../assets/Data/newLogo.png";
 import logo2 from "../assets/dialysisLogo2.jpg";
 import { IoMenu } from "react-icons/io5";
+import { IoMdClose } from "react-icons/io";
+
 
 const Header = () => {
   const [isSticky, setIsSticky] = useState(false);
@@ -148,22 +150,32 @@ const Header = () => {
         <button className="bg-[var(--primary-bg)] font-bold text-white px-4 py-2 rounded hover:opacity-90">
           Make an Appointment
         </button>
-        <IoMenu
-          className="flex md:text-4xl text-2xl lg:hidden"
-          onClick={() => {
-            setToggle((prev) => !prev);
-          }}
-        />
+        {!toggle ? (
+          <IoMenu
+            className="flex md:text-4xl text-2xl lg:hidden"
+            onClick={() => {
+              setToggle(true);
+            }}
+          />
+        ) : (
+          <IoMdClose
+            className="flex md:text-4xl text-2xl lg:hidden"
+            onClick={() => {
+              setToggle(false);
+            }}
+          />
+        )}
       </div>
+
       <div
-        className={`w-[40%] md:w-auto h-auto bg-gray-500  fixed right-0 transition-transform duration-500 ${
+        className={`w-[40%] md:w-auto h-auto bg-gray-500 z-[999]  fixed right-0 transition-transform duration-500 ${
           toggle === true ? "translate-x-0" : "translate-x-full"
         } `}
       >
         <div
           className={`w-full h-full text-nowrap flex flex-col lg:hidden gap-5 p-10 text-white`}
         >
-           <h4
+          <h4
             className="hover:text-[var(--primary-bg)] cursor-pointer"
             style={{
               color: selectHeader === "home" ? "var(--primary-bg)" : "",

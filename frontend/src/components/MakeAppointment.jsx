@@ -12,7 +12,7 @@ const MakeAppointment = () => {
         asperiores laudantium voluptatibus necessitatibus ipsam dolores velit
         officiis sunt, totam distinctio veritatis? Pariatur.
       </h4>
-      <div className="w-full h-auto grid grid-cols-2  lg:grid-cols-3 gap-10">
+      <div className="w-full h-auto grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-10">
         <input
           type="text"
           className="w-full bg-white border-1 p-2"

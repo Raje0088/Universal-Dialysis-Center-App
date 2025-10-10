@@ -48,7 +48,10 @@ function App() {
         <Contact />
       </div>
       <MakeAppointment />
+         <div id="diet">
+
       <Pricing />
+         </div>
       <RecognizationAndAward />
       <QNA />
       <I2s2Footer />

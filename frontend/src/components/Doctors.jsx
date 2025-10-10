@@ -47,7 +47,7 @@ const Doctors = () => {
 
   return (
     <div className="w-full h-auto flex flex-col items-center px-5 md:px-20 py-12 bg-[#f7fcfc]">
-      <h2 className="text-2xl md:text-3xl font-bold text-[var(--primary-bg)] mb-2">
+      <h2 className="text-xl font-bold underline-center tracking-wider text-[var(--primary-bg)] mb-2">
         Our Expert Doctors
       </h2>
       <p className="text-gray-600 text-center max-w-2xl mb-8">

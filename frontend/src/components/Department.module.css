@@ -5,6 +5,19 @@
 }
 
 /* Animate for all small screens and tablets */
+
+/* Tablet: enable horizontal scroll for the left menu */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .tabletScroll {
+    overflow-x: auto !important;
+    overflow-y: hidden;
+    white-space: nowrap !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+}
+
+
 @media (max-width: 1024px) {
   .animate {
     animation: slideFade 0.5s ease forwards;
