@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styles from "./Cards.module.css";
 import marker from "../assets/SVG/marker-hospital.svg";
 import care from "../assets/SVG/care.svg";
@@ -8,10 +8,17 @@ import bed from "../assets/SVG/hospital-bed.svg";
 import two47 from "../assets/SVG/247.png";
 import clean from "../assets/SVG/ecology.svg";
 import appointment from "../assets/SVG/appointment.svg";
-import docGif from "../assets/SVG/doctors-office.gif"
+import docGif from "../assets/SVG/doctors-office.gif";
 import { FaBedPulse } from "react-icons/fa6";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Cards = () => {
+  const boxRef = useRef();
+  const textRef = useRef();
+
   const cardItem = [
     {
       id: 1,
@@ -62,6 +69,32 @@ const Cards = () => {
       description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
     },
   ];
+
+  useEffect(() => {
+    gsap.fromTo(
+      boxRef.current,
+      {
+        y: -50,
+        rotate: -45,
+      },
+      {
+        duration: 2,
+        y: 0,
+        rotation: 0,
+        scrollTrigger: {
+          trigger: boxRef.current,
+          start: "top 100%",
+          // end: "bottom 200%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+    gsap.fromTo(
+      textRef.current,
+      { x: -200 },
+      { x: 0, duration: 3, ease: "bounce.out",  }
+    );
+  }, []);
 
   // Function to handle the tilt effect
   const handleMouseMove = (e, cardRef) => {
@@ -133,7 +166,18 @@ const Cards = () => {
         ))}
       </div>
       <div className="w-full h-auto  flex flex-col items-center justify-center py-10 px-10 md:px-20 gap-5 bg-[var(--primary-bg)] text-center text-white">
-        <h1 className="flex gap-5 items-center">We Are Here for You 24/7 <img src={docGif} alt="" className="w-16 h-16 rounded-2xl " /></h1>
+        <h1 className="flex gap-5 items-center">
+          <label htmlFor="" ref={textRef}>
+            {" "}
+            We Are Here for You 24/7
+          </label>
+          <img
+            src={docGif}
+            alt=""
+            ref={boxRef}
+            className="w-16 h-16 rounded-2xl "
+          />
+        </h1>
         <h4 className="max-w-4xl ">
           At Universal Dialysis Center, our mission is to provide compassionate,
           high-quality dialysis care to improve the lives of individuals with
